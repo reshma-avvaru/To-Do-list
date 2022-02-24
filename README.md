@@ -1,6 +1,6 @@
 # ToDoList
 
-A to-do list application to keep a track of pending and completed taks.
+A to-do list web-application to keep track of pending and completed taks.
 
 The project is deployed using firebase hosting at https://to-do-list-70ee8.web.app .
 
