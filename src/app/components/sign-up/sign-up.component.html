@@ -1,0 +1,38 @@
+<div class="container">
+    <div>
+        <h4>Sign Up</h4>
+        <form (ngSubmit)="signUp()" #signUpForm="ngForm">
+            <div class="form-group col-md-6">
+                <label for="email">Email</label>
+                <input type="email"
+                       class="form-control"
+                       id="email"
+                       required
+                       [(ngModel)]="email"
+                       name="email"
+                       #emailctrl="ngModel"
+                       email>
+                <div *ngIf="emailctrl.errors?.email" class="alert alert-danger">Valid email is required</div>
+            </div>
+            <div class="form-group col-md-6">
+                <label for="password">Password</label>
+                <input type="password"
+                       class="form-control"
+                       id="password"
+                       required
+                       [(ngModel)]="password"
+                       name="password"
+                       #passwordctrl="ngModel"
+                       password
+                       minlength="8">
+                <div *ngIf="passwordctrl.dirty && passwordctrl.errors?.minlength"
+                     class="alert alert-danger">
+                    Password should be minimum 8 characters
+                </div>
+            </div>
+            <button type="submit"
+                    class="btn btn-primary mt-3"
+                    [disabled]="!signUpForm.valid">Sign Up</button>
+        </form>
+    </div>
+</div>
